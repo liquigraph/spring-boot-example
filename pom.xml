@@ -32,7 +32,7 @@
         <dependency>
             <groupId>org.liquigraph</groupId>
             <artifactId>liquigraph-core</artifactId>
-            <version>3.0.0</version>
+            <version>3.0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.neo4j</groupId>
@@ -43,5 +43,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.liquigraph</groupId>
+            <artifactId>liquigraph-spring-boot-starter</artifactId>
+            <version>3.0.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
