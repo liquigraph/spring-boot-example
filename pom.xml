@@ -44,9 +44,9 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>de.mvitz</groupId>
-            <artifactId>spring-boot-starter-liquigraph</artifactId>
-            <version>0.1.0-SNAPSHOT</version>
+            <groupId>org.liquigraph</groupId>
+            <artifactId>liquigraph-spring-boot-starter</artifactId>
+            <version>3.0.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
