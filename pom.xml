@@ -1,66 +1,62 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.liquigraph.examples</groupId>
-  <artifactId>liquigraph-spring</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.4.2.RELEASE</version>
+    <version>1.4.3.RELEASE</version>
   </parent>
+
+  <groupId>org.liquigraph.examples</groupId>
+  <artifactId>liquigraph-spring</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
   <name>Example integration with Spring Boot</name>
 
   <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
-      <maven.compiler.source>1.8</maven.compiler.source>
-      <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+    <encoding>UTF-8</encoding>
+    <java.version>1.8</java.version>
   </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>2.4.7</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.liquigraph</groupId>
-            <artifactId>liquigraph-spring-boot-starter</artifactId>
-            <version>3.0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-jdbc-bolt</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-    </dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.neo4j</groupId>
+      <artifactId>neo4j-jdbc-bolt</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.liquigraph</groupId>
+      <artifactId>liquigraph-spring-boot-starter</artifactId>
+      <version>3.0.2-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 
-    <build>
-        <finalName>${project.artifactId}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
-    <repositories>
-        <repository>
-            <id>maven-central-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases><enabled>false</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-    </repositories>
+  <repositories>
+    <repository>
+      <id>maven-central-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases><enabled>false</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </repository>
+  </repositories>
+
 </project>
