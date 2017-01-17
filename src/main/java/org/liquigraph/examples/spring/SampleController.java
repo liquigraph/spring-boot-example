@@ -1,32 +1,28 @@
 package org.liquigraph.examples.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.context.annotation.Import;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@Controller
-@EnableAutoConfiguration
-@Import(MigrationConfiguration.class)
+import javax.sql.DataSource;
+
+@SpringBootApplication
+@RestController
 public class SampleController {
 
     private final DataSource dataSource;
 
-    @Autowired
     public SampleController(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    @RequestMapping("/")
-    @ResponseBody
+    @GetMapping("/")
     String home() throws Exception {
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
